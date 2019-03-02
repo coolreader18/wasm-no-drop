@@ -9,7 +9,7 @@ struct A {
 
 impl Drop for A {
   fn drop(&mut self) {
-    web_sys::window().expect("window").alert_with_message("dropping").expect("alert");
+    web_sys::window().expect("window").alert_with_message(self.msg).expect("alert");
   }
 }
 
